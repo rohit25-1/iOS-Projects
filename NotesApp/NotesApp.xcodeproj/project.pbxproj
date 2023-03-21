@@ -19,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F9D5F99929CA30710095037D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F9EEC91229C87A3D002405E1 /* NotesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9EEC91529C87A3D002405E1 /* NotesAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAppApp.swift; sourceTree = "<group>"; };
 		F9EEC91729C87A3D002405E1 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		F9EEC91429C87A3D002405E1 /* NotesApp */ = {
 			isa = PBXGroup;
 			children = (
+				F9D5F99929CA30710095037D /* Info.plist */,
 				F9EEC91529C87A3D002405E1 /* NotesAppApp.swift */,
 				F9EEC91729C87A3D002405E1 /* NotesView.swift */,
 				F9FDAA2829C8A99300A955F0 /* NotesRequest.swift */,
@@ -293,6 +295,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NotesApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -321,6 +324,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NotesApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

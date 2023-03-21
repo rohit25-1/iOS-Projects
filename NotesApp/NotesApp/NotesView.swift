@@ -19,16 +19,17 @@ struct NotesView: View {
                     .navigationTitle("Notes")
             }
             else{
-                List(notesObject.notes, id: \.id){ notes in
+                List(notesObject.notes, id: \._id){ notes in
                     Text(notes.title)
                         .padding()
                         .onTapGesture {
+                            notesObject.isOpen = true
                             notesObject.currentNote = notes
                         }
                     
                 }
                 .refreshable {
-                    notesObject.makeRequest()
+                    notesObject.makeGetRequest()
                 }
                 .navigationTitle("Notes")
                     
@@ -37,7 +38,7 @@ struct NotesView: View {
                 
         }.sheet(isPresented: $notesObject.isOpen)
         {
-            NotesSheetView(notesData: notesObject.currentNote!)
+            NotesSheetView(notesData: notesObject.currentNote)
         }
         
     }

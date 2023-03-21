@@ -13,38 +13,39 @@ import Alamofire
 class NotesRequest : ObservableObject{
     
     init() {
-        makeRequest()
+        makeGetRequest()
     }
     @Published var isOpen = false
     @Published var notes:[NotesModel] = []
-    var currentNote : NotesModel?{
-        didSet{
-            isOpen = true
-        }
-    }
-    func makeRequest()
+    @Published var currentNote = NotesModel(title: "demo", _id: "001", notes: "demo")
+    func makeGetRequest()
     {
-        let url = "http://localhost:3000/notes"
-        AF.request(url,method: .get).response{ response in
-            switch response.result{
-            case .success:
-                do{
-                    let json = try JSON(data: response.data!)
-                    self.notes.removeAll()
-                    for (_,ele) in json{
-                        let note = NotesModel(title: ele["title"].stringValue, _id: ele["_id"].stringValue, notes: ele["notes"].stringValue)
-                        self.notes.append(note)
-                    }
-                }
-                catch{
-                    print(error)
-                }
-            case .failure:
-                print(response.error ?? "Server Error")
-                
+        let url = URL(string: "http://localhost:3000/notes")!
+        let session = URLSession.shared
+        session.dataTask(with: url) { data, response, error in
+            // handle the response here
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                return
             }
-        }
+            guard let data = data else {
+                print("No data returned")
+                return
+            }
+            print(String(data: data, encoding: .utf8)!)
+            do{
+                let decoder = JSONDecoder()
+                self.notes = try decoder.decode([NotesModel].self, from: data)
+                print(self.notes)
+            }
+            catch{
+                print("Error decoding JSON: \(error)")
+            }
+            
+        }.resume()
+            
     }
+    
 }
 
 

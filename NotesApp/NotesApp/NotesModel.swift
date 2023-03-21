@@ -6,8 +6,7 @@
 //
 
 import Foundation
-struct NotesModel: Identifiable{
-    var id: String{ _id }
+struct NotesModel: Decodable{
     var title: String
     var _id: String
     var notes: String
