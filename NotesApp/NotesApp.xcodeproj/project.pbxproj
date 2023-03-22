@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F9AA986029CB358900C8C167 /* CreateNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AA985F29CB358900C8C167 /* CreateNotesView.swift */; };
 		F9EEC91629C87A3D002405E1 /* NotesAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EEC91529C87A3D002405E1 /* NotesAppApp.swift */; };
 		F9EEC91829C87A3D002405E1 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EEC91729C87A3D002405E1 /* NotesView.swift */; };
 		F9EEC91A29C87A3E002405E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9EEC91929C87A3E002405E1 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F9AA985F29CB358900C8C167 /* CreateNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNotesView.swift; sourceTree = "<group>"; };
 		F9D5F99929CA30710095037D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F9EEC91229C87A3D002405E1 /* NotesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9EEC91529C87A3D002405E1 /* NotesAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAppApp.swift; sourceTree = "<group>"; };
@@ -65,11 +67,12 @@
 				F9D5F99929CA30710095037D /* Info.plist */,
 				F9EEC91529C87A3D002405E1 /* NotesAppApp.swift */,
 				F9EEC91729C87A3D002405E1 /* NotesView.swift */,
+				F9AA985F29CB358900C8C167 /* CreateNotesView.swift */,
+				F9FDAA2A29C8BD1500A955F0 /* NotesSheetView.swift */,
 				F9FDAA2829C8A99300A955F0 /* NotesRequest.swift */,
+				F9FDAA2C29C8BDB500A955F0 /* NotesModel.swift */,
 				F9EEC91929C87A3E002405E1 /* Assets.xcassets */,
 				F9EEC91B29C87A3E002405E1 /* Preview Content */,
-				F9FDAA2A29C8BD1500A955F0 /* NotesSheetView.swift */,
-				F9FDAA2C29C8BDB500A955F0 /* NotesModel.swift */,
 			);
 			path = NotesApp;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			files = (
 				F9FDAA2B29C8BD1500A955F0 /* NotesSheetView.swift in Sources */,
 				F9EEC91829C87A3D002405E1 /* NotesView.swift in Sources */,
+				F9AA986029CB358900C8C167 /* CreateNotesView.swift in Sources */,
 				F9EEC91629C87A3D002405E1 /* NotesAppApp.swift in Sources */,
 				F9FDAA2929C8A99300A955F0 /* NotesRequest.swift in Sources */,
 				F9FDAA2D29C8BDB500A955F0 /* NotesModel.swift in Sources */,

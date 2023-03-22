@@ -1,13 +1,13 @@
 //
-//  NotesSheetView.swift
+//  SwiftUIView.swift
 //  NotesApp
 //
-//  Created by Rohit Sridharan on 20/03/23.
+//  Created by Rohit Sridharan on 22/03/23.
 //
 
 import SwiftUI
 
-struct NotesSheetView: View {
+struct CreateNotesView: View {
     @State var notesData : NotesModel
     @Binding var isDisplayed : Bool
     var body: some View {
@@ -21,7 +21,7 @@ struct NotesSheetView: View {
         
                     Spacer()
                 Button(action: {
-                    let url = URL(string: "http://localhost:3000/update-notes")!
+                    let url = URL(string: "http://localhost:3000/notes")!
                     var request = URLRequest(url: url)
                     request.httpMethod = "POST"
                     let parameters = ["notes": notesData.notes, "title": notesData.title]
@@ -29,13 +29,12 @@ struct NotesSheetView: View {
                     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
                     let session = URLSession.shared
                     let task = session.dataTask(with: request) { data, response, error in
-                        // handle response
                     }
                     task.resume()
-                    isDisplayed = false
+                    
                     
                 }, label: {
-                    Text("Update")
+                    Text("Add Note")
                         .bold()
                         .frame(width: 200, height: 50)
                         .background(Color.blue)
@@ -46,34 +45,13 @@ struct NotesSheetView: View {
                 })
             }
             .navigationTitle(notesData.title)
-            .toolbar(content: {
-                Button(action: {
-                    let url = URL(string: "http://localhost:3000/delete-notes")!
-                    var request = URLRequest(url: url)
-                    request.httpMethod = "POST"
-                    let parameters = ["_id": notesData._id]
-                    request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
-                    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-                    let session = URLSession.shared
-                    let task = session.dataTask(with: request) { data, response, error in
-                    }
-                    task.resume()
-                    isDisplayed = false
-                }, label: {
-                    Image(systemName: "trash")
-                        .accentColor(.red)
-                })
-            })
                 
         }
     }
 }
 
-
-
-
-struct NotesSheetView_Previews: PreviewProvider {
+struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        NotesSheetView(notesData: NotesModel(title: "test", _id: "1", notes: "test"), isDisplayed: .constant(false))
+        CreateNotesView(notesData: NotesModel(title: "test", _id: "1", notes: "test"), isDisplayed: .constant(false))
     }
 }
