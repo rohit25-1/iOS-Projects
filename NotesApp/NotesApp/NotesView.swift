@@ -45,12 +45,15 @@ struct NotesView: View {
                         }
                         else{
                             List(notesObject.notes, id: \._id){ notes in
-                                Text(notes.title)
-                                    .padding()
-                                    .onTapGesture {
-                                        notesObject.isOpen = true
-                                        notesObject.currentNote = notes
-                                    }
+                                Button(action: {
+                                    notesObject.isOpen = true
+                                    notesObject.currentNote = notes
+                                }, label: {
+                                    Text(notes.title)
+                                        .foregroundColor(.white)
+                                        .padding()
+                                        .fontWeight(.bold)
+                                }).frame(width: 320, height: 40,alignment: .leading)
                             }
                             .refreshable {
                                 notesObject.makeGetRequest()
@@ -82,20 +85,16 @@ struct NotesView: View {
                     Text("Cancel")
                 })
             }
-            .sheet(isPresented: $notesObject.isOpen, onDismiss: {
-                notesObject.makeGetRequest()
-            }, content: {
+            .sheet(isPresented: $notesObject.isOpen, onDismiss: notesObject.makeGetRequest, content: {
                 NotesSheetView(notesData: notesObject.currentNote, isDisplayed: $notesObject.isOpen)
             })
-            .sheet(isPresented: $newNoteOpen, onDismiss: {
+            .sheet(isPresented: $newNoteOpen,onDismiss:{
                 notesObject.makeGetRequest()
-            }, content: {
+                newNoteTitle = ""
+            },content: {
                 CreateNotesView(notesData: NotesModel(title: newNoteTitle, _id: "", notes: ""), isDisplayed: $newNoteOpen)
             })
         }
-        
-
-        
     }
 }
     
@@ -104,5 +103,6 @@ struct NotesView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         NotesView()
+            .preferredColorScheme(.dark)
     }
 }

@@ -10,28 +10,19 @@ import SwiftUI
 struct CreateNotesView: View {
     @State var notesData : NotesModel
     @Binding var isDisplayed : Bool
+    var notesObject = NotesRequest()
     var body: some View {
 
         NavigationStack {
             VStack{
-
                 TextEditor(text: $notesData.notes)
                     .frame(minHeight: 100)
                     .padding()
-        
                     Spacer()
                 Button(action: {
-                    let url = URL(string: "http://localhost:3000/notes")!
-                    var request = URLRequest(url: url)
-                    request.httpMethod = "POST"
-                    let parameters = ["notes": notesData.notes, "title": notesData.title]
-                    request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
-                    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-                    let session = URLSession.shared
-                    let task = session.dataTask(with: request) { data, response, error in
-                    }
-                    task.resume()
-                    
+                    notesObject.createNotesPost(notesData: notesData)
+                    notesObject.makeGetRequest()
+                    isDisplayed = false
                     
                 }, label: {
                     Text("Add Note")

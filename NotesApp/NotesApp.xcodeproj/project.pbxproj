@@ -12,8 +12,6 @@
 		F9EEC91829C87A3D002405E1 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EEC91729C87A3D002405E1 /* NotesView.swift */; };
 		F9EEC91A29C87A3E002405E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9EEC91929C87A3E002405E1 /* Assets.xcassets */; };
 		F9EEC91D29C87A3E002405E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9EEC91C29C87A3E002405E1 /* Preview Assets.xcassets */; };
-		F9EEC92529C87BAE002405E1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F9EEC92429C87BAE002405E1 /* Alamofire */; };
-		F9EEC92829C87D60002405E1 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F9EEC92729C87D60002405E1 /* SwiftyJSON */; };
 		F9FDAA2929C8A99300A955F0 /* NotesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FDAA2829C8A99300A955F0 /* NotesRequest.swift */; };
 		F9FDAA2B29C8BD1500A955F0 /* NotesSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FDAA2A29C8BD1500A955F0 /* NotesSheetView.swift */; };
 		F9FDAA2D29C8BDB500A955F0 /* NotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FDAA2C29C8BDB500A955F0 /* NotesModel.swift */; };
@@ -37,8 +35,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9EEC92829C87D60002405E1 /* SwiftyJSON in Frameworks */,
-				F9EEC92529C87BAE002405E1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,8 +98,6 @@
 			);
 			name = NotesApp;
 			packageProductDependencies = (
-				F9EEC92429C87BAE002405E1 /* Alamofire */,
-				F9EEC92729C87D60002405E1 /* SwiftyJSON */,
 			);
 			productName = NotesApp;
 			productReference = F9EEC91229C87A3D002405E1 /* NotesApp.app */;
@@ -388,19 +382,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		F9EEC92429C87BAE002405E1 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F9EEC92329C87BAE002405E1 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		F9EEC92729C87D60002405E1 /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F9EEC92629C87D60002405E1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F9EEC90A29C87A3D002405E1 /* Project object */;
 }
