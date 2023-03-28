@@ -6,8 +6,7 @@
 //
 
 import Foundation
-import SwiftyJSON
-import Alamofire
+
 
 
 class NotesRequest : ObservableObject{
@@ -23,6 +22,7 @@ class NotesRequest : ObservableObject{
     
     func makeGetRequest()
     {
+//        let url = URL(string: "http://192.168.1.9:3000/notes")!
         let url = URL(string: "http://localhost:3000/notes")!
         let session = URLSession.shared
         session.dataTask(with: url) { data, response, error in
@@ -57,6 +57,7 @@ class NotesRequest : ObservableObject{
     func updatePostRequest(notesData : NotesModel)
     {
         let url = URL(string: "http://localhost:3000/update-notes")!
+//        let url = URL(string: "http://192.168.1.9:3000/update-notes")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         let parameters = ["notes": notesData.notes, "title": notesData.title]
@@ -71,6 +72,7 @@ class NotesRequest : ObservableObject{
     
     func deletePostRequest(notesData: NotesModel)
     {
+//        let url = URL(string: "http://192.168.1.9:3000/delete-notes")!
         let url = URL(string: "http://localhost:3000/delete-notes")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -85,6 +87,7 @@ class NotesRequest : ObservableObject{
     
     func createNotesPost(notesData: NotesModel)
     {
+//        let url = URL(string: "http://192.168.1.9:3000/notes")!
         let url = URL(string: "http://localhost:3000/notes")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
