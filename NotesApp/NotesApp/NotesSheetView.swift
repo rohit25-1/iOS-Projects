@@ -10,7 +10,7 @@ import SwiftUI
 struct NotesSheetView: View {
     @State var notesData : NotesModel
     @Binding var isDisplayed : Bool
-    var notesObject = NotesRequest()
+    @EnvironmentObject var notesObject : NotesRequest
     var body: some View {
 
         NavigationStack {
@@ -25,7 +25,6 @@ struct NotesSheetView: View {
             .toolbar(content: {
                 Button(action: {
                     notesObject.deletePostRequest(notesData: notesData)
-                    notesObject.makeGetRequest()
                     isDisplayed = false
                 }, label: {
                     Image(systemName: "trash")
@@ -35,7 +34,6 @@ struct NotesSheetView: View {
             .toolbar(content: {
                 Button(action: {
                     notesObject.updatePostRequest(notesData: notesData)
-                    notesObject.makeGetRequest()
                     isDisplayed = false
                 }, label: {
                     Image(systemName: "square.and.arrow.down")

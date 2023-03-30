@@ -10,7 +10,7 @@ import SwiftUI
 struct CreateNotesView: View {
     @State var notesData : NotesModel
     @Binding var isDisplayed : Bool
-    var notesObject = NotesRequest()
+    @EnvironmentObject var notesObject : NotesRequest
     var body: some View {
 
         NavigationStack {
@@ -21,7 +21,6 @@ struct CreateNotesView: View {
                     Spacer()
                 Button(action: {
                     notesObject.createNotesPost(notesData: notesData)
-                    notesObject.makeGetRequest()
                     isDisplayed = false
                     
                 }, label: {

@@ -39,12 +39,11 @@ class NotesRequest : ObservableObject{
                     print("No data returned")
                     return
                 }
-                print(String(data: data, encoding: .utf8)!)
                 do{
                     self.error = ""
                     let decoder = JSONDecoder()
                     self.notes = try decoder.decode([NotesModel].self, from: data)
-//                    print(self.notes)
+                    print(self.notes)
                 }
                 catch{
                     print("Error decoding JSON: \(error)")
@@ -65,7 +64,9 @@ class NotesRequest : ObservableObject{
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, response, error in
-            // handle response
+            DispatchQueue.main.async {
+                self.makeGetRequest()
+            }
         }
         task.resume()
     }
@@ -81,6 +82,9 @@ class NotesRequest : ObservableObject{
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                self.makeGetRequest()
+            }
         }
         task.resume()
     }
@@ -96,6 +100,9 @@ class NotesRequest : ObservableObject{
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                self.makeGetRequest()
+            }
         }
         task.resume()
     }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NotesView: View {
-    @ObservedObject var notesObject = NotesRequest()
+    @EnvironmentObject var notesObject : NotesRequest
     @State private var newNoteTitle = ""
     @State private var showAlert = false
     @State private var newNoteOpen = false
