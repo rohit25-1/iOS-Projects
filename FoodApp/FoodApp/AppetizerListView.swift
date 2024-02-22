@@ -27,7 +27,19 @@ struct AppetizerListView: View {
                             .fontWeight(.bold)
                             
                     }.padding(.leading)
+                    Spacer()
+                    NavigationLink(destination: NavigationTest()) {
+                        Text("Rohit")
+                            .frame(width: 60, height: 40)
+                            .foregroundColor(.white)
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                    }.buttonStyle(.plain)
+                        .opacity(0)
                 }
+//                .onTapGesture {
+                    
+//                }
                 
             }
                 .navigationTitle("Appetizers")

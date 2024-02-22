@@ -90,6 +90,7 @@ struct CustomText: View {
             .font(.system(size: fontsize, weight:fontweight, design: .default ))
             .foregroundColor(fontcolor)
     }
+    
 }
 
 struct WeatherImages: View {

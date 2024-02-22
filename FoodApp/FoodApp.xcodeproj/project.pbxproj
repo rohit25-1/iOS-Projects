@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F986C44D29F077C2009C4CE5 /* NavigationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F986C44C29F077C2009C4CE5 /* NavigationTest.swift */; };
 		F9B5BBD029C83AD10046064C /* FoodAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B5BBCF29C83AD10046064C /* FoodAppApp.swift */; };
 		F9B5BBD229C83AD10046064C /* AppetizerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B5BBD129C83AD10046064C /* AppetizerListView.swift */; };
 		F9B5BBD429C83AD20046064C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9B5BBD329C83AD20046064C /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F986C44C29F077C2009C4CE5 /* NavigationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTest.swift; sourceTree = "<group>"; };
 		F9B5BBCC29C83AD10046064C /* FoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B5BBCF29C83AD10046064C /* FoodAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAppApp.swift; sourceTree = "<group>"; };
 		F9B5BBD129C83AD10046064C /* AppetizerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				F9B5BBCF29C83AD10046064C /* FoodAppApp.swift */,
 				F9B5BBE129C83B860046064C /* AppetizerTabView.swift */,
 				F9B5BBD129C83AD10046064C /* AppetizerListView.swift */,
+				F986C44C29F077C2009C4CE5 /* NavigationTest.swift */,
 				F9B5BBDD29C83B390046064C /* OrderView.swift */,
 				F9B5BBDF29C83B450046064C /* AccountView.swift */,
 				F9B5BBD329C83AD20046064C /* Assets.xcassets */,
@@ -152,6 +155,7 @@
 				F9B5BBE429C851670046064C /* Appetizer.swift in Sources */,
 				F9B5BBE029C83B450046064C /* AccountView.swift in Sources */,
 				F9B5BBDE29C83B390046064C /* OrderView.swift in Sources */,
+				F986C44D29F077C2009C4CE5 /* NavigationTest.swift in Sources */,
 				F9B5BBD229C83AD10046064C /* AppetizerListView.swift in Sources */,
 				F9B5BBD029C83AD10046064C /* FoodAppApp.swift in Sources */,
 				F9B5BBE229C83B860046064C /* AppetizerTabView.swift in Sources */,
